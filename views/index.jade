@@ -1,0 +1,47 @@
+extends layout
+
+block content
+  h1= title
+  p Welcome to #{title}
+  //- wrapper, 默认是 div
+  #wrapper
+    //- USER INFO, 下面分行写可以只让 第一行加粗, 第二行不加粗
+    #userInfo
+      h2 User Info
+      p
+        strong Name:
+        |   <span id='userInfoName'></span>
+        br
+        strong Age:
+        |  <span id='userInfoAge'></span>
+        br
+        strong Gender:
+        |  <span id='userInfoGender'></span>
+        br
+        strong Location:
+        |  <span id='userInfoLocation'></span>
+
+    //- USER LIST
+    #userList
+      h2 User List
+      table
+        thead
+          th UserName(点击显示详细信息)
+          th Email
+          th Delete?
+        tbody
+
+    //- ADD USER
+    #addUser
+      h2 Add User
+      fieldset
+        input#inputUserName(type='text', placeholder='Username')
+        input#inputUserEmail(type='text', placeholder='Email')
+        br
+        input#inputUserFullname(type='text', placeholder='Full Name')
+        input#inputUserAge(type='text', placeholder='Age')
+        br
+        input#inputUserLocation(type='text', placeholder='Location')
+        input#inputUserGender(type='text', placeholder='gender')
+        br
+        button#btnAddUser Add User

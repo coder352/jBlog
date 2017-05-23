@@ -1,0 +1,11 @@
+extends layout
+
+block content
+    h1.
+        User List
+    ul
+        each user, i in userlist
+            li
+                a(href="mailto:#{user.email}")= user.username
+                //- { "username" : "testuser1", "email" : "testuser1@testdomain.com" }
+
