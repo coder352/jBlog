@@ -20,6 +20,7 @@ db.userlist.insert({'username' : 'test1','email' : 'test1@test.com','fullname' :
 # 结束关闭
 kill node<Tab>  # 关闭 npm start
 killport 27017  # 关闭 mongod 的后台服务
+renpm  # 将上面两步合成一步
 ```
 ### Tips
 ``` zsh
