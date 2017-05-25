@@ -2,8 +2,14 @@
 [中文翻译](http://www.jianshu.com/p/3b045636bcec)
 [参考2: Github](https://github.com/cwbuecheler/node-tutorial-2-restful-app)
 [中文翻译](http://www.jianshu.com/p/8a90687576f9)
+[很多 bootstrap -> pug 的模板](http://rajasegar.github.io/JADE-Bootstrap/getting-started.html)
+[这里也有 bootstrap -> pug 模板](https://bootstrap3-jade-node-express-grunt.azurewebsites.net/)
 ### Description
 我的个人网站, 主体是博客, 会挂上很多其他功能
+``` zsh
+虽然使用了 jade-bootstrap, 但是如果没用 + 开头的函数的话可以不太需要它...
+users.js 路由只提供 Restful API, 不进行渲染
+```
 ### Run
 ``` zsh
 npm install  # 安装 ./package.json 中的 dependencies
@@ -20,7 +26,13 @@ db.userlist.insert({'username' : 'test1','email' : 'test1@test.com','fullname' :
 # 结束关闭
 kill node<Tab>  # 关闭 npm start
 killport 27017  # 关闭 mongod 的后台服务
-renpm  # 将上面两步合成一步
+renpm  # qkill node && nohupzsh npm start
+```
+### 增加新的功能
+``` zsh
+1. ./routes/index.js 中添加路由, 也可在 users.js
+2. ./views/ 中添加相关的 .pug
+3. ./public/ 中添加相应的 js, css 文件
 ```
 ### Tips
 ``` zsh
