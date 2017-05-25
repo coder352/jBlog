@@ -10,6 +10,7 @@ append styles
     //- link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
     link(rel='stylesheet', href='/stylesheets/style.css')
     link(rel='stylesheet', href='/stylesheets/dashboard.css')
+    link(rel='stylesheet', href='/stylesheets/sticky-footer.css')
 append scripts
     //- jquery 在 jade-bootstrap.pug 中的版本比较低, 这里会版本覆盖
     //- jade-bootstrap.pug 中 bootstrap 在 jquery 后面引入, 所以 bootstrap 用的是 jade-bootstrap 引入的, 后来又进行了覆盖, 互不干扰
@@ -21,25 +22,26 @@ append scripts
     //- jquery 可以写到最上面, 但 global.js 中有 ready(), 所以也可以写到前面, 但自己的 js 要写到 jquery 后面
 
 block body
-    //- sign-in.pug 中就可以将 block top 清空, 或者直接重写 block body
-    block top
-        nav.navbar.navbar-inverse.navbar-fixed-top
-            .container-fluid
-                .navbar-header
-                    button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
-                        span.sr-only Toggle navigation
-                        span.icon-bar
-                        span.icon-bar
-                        span.icon-bar
-                    a.navbar-brand(href='#') Project name
-                #navbar.navbar-collapse.collapse
-                    ul.nav.navbar-nav.navbar-right
-                        li
-                            a(href='#') Dashboard
-                        li
-                            a(href='#') Help
-                    form.navbar-form.navbar-right
-                        input.form-control(type='text', placeholder='Search...')
+    //- sign-in.pug 中就可以将 block dashboard 清空, 或者直接重写 block body
+    block dashboard
+        block navbar
+            nav.navbar.navbar-inverse.navbar-fixed-top
+                .container-fluid
+                    .navbar-header
+                        button.navbar-toggle.collapsed(type='button', data-toggle='collapse', data-target='#navbar', aria-expanded='false', aria-controls='navbar')
+                            span.sr-only Toggle navigation
+                            span.icon-bar
+                            span.icon-bar
+                            span.icon-bar
+                        a.navbar-brand(href='#') Project name
+                    #navbar.navbar-collapse.collapse
+                        ul.nav.navbar-nav.navbar-right
+                            li
+                                a(href='#') Dashboard
+                            li
+                                a(href='#') Help
+                        form.navbar-form.navbar-right
+                            input.form-control(type='text', placeholder='Search...')
         .container-fluid
             .row
                 .col-sm-3.col-md-2.sidebar
@@ -62,3 +64,8 @@ block body
                             a(href='') Another nav item
                 .col-sm-9.col-sm-offset-3.col-md-10.col-md-offset-2.main
                     block content
+                block footer
+                    footer.footer
+                        .container
+                            p.text-muted Place sticky footer content here.
+
