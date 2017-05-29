@@ -10,6 +10,7 @@
 ``` zsh
 虽然使用了 jade-bootstrap, 但是如果没用 + 开头的函数的话可以不太需要它...
 users.js 路由只提供 Restful API, 不进行渲染
+找时间把 sass 统一重写一遍
 ```
 ### Run
 ``` zsh

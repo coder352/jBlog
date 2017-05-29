@@ -1,22 +1,10 @@
 extends layout
 
+append styles
+    link(rel='stylesheet', href='/stylesheets/user-manager.css')
+append scripts
+    script(src='/javascripts/user-manager.js')
 block content
-    h1= title
-    p Welcome to #{title}
-    .container
-        .content
-            table.table.table-striped
-                thead
-                    tr
-                        th Table
-                        th Heading
-                tbody
-                    tr
-                        td Blah
-                        td Test
-                    tr
-                        td Hello
-                        td World
     //- wrapper, 默认是 div
     #wrapper
         //- USER INFO, 下面分行写可以只让 第一行加粗, 第二行不加粗
@@ -24,17 +12,16 @@ block content
             h2 User Info
             p
                 strong Name:
-                |   <span id='userInfoName'></span>
+                span#userInfoName
                 br
                 strong Age:
-                |  <span id='userInfoAge'></span>
+                span#userInfoAge
                 br
                 strong Gender:
-                |  <span id='userInfoGender'></span>
+                span#userInfoGender
                 br
                 strong Location:
-                |  <span id='userInfoLocation'></span>
-
+                span#userInfoLocation
         //- USER LIST
         #userList
             h2 User List
@@ -44,10 +31,11 @@ block content
                     th Email
                     th Delete?
                 tbody
-
         //- ADD USER
         #addUser
             h2 Add User
+            // req.body: { username: 'aa', email: 'bb', fullname: 'cc', age: 'dd', location: 'ee', gender: 'ff' }
+            // 点击按钮后提交的就是一个字典
             fieldset
                 input#inputUserName(type='text', placeholder='Username')
                 input#inputUserEmail(type='text', placeholder='Email')

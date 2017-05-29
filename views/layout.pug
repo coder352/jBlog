@@ -7,22 +7,26 @@
 //- _bootstrap.pug 中有 一个变量 title, 三个 block(styles, scripts, body)
 extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
+    //- _bootstrap.pug 的 block styles 在 head 的末尾
     //- link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
-    link(rel='stylesheet', href='/stylesheets/style.css')
-    link(rel='stylesheet', href='/stylesheets/dashboard.css')
-    link(rel='stylesheet', href='/stylesheets/sticky-footer.css')
+    link(rel='stylesheet', href='/stylesheets/layout-style.css')
+    link(rel='stylesheet', href='/stylesheets/layout-dashboard.css')
+    link(rel='stylesheet', href='/stylesheets/layout-sticky-footer.css')
 append scripts
+    //- body
+    //-     block body
+    //-     block scripts  // _bootstrap.pug 的 block scripts 在 body 的末尾, 所以下面的 block body 不会覆盖 scripts
     //- jquery 在 jade-bootstrap.pug 中的版本比较低, 这里会版本覆盖
     //- jade-bootstrap.pug 中 bootstrap 在 jquery 后面引入, 所以 bootstrap 用的是 jade-bootstrap 引入的, 后来又进行了覆盖, 互不干扰
     //- $().jquery 查看版本
     //- script(src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js")
     //- script(src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/js/bootstrap.min.js")
     script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
-    script(src='/javascripts/global.js')
     //- jquery 可以写到最上面, 但 global.js 中有 ready(), 所以也可以写到前面, 但自己的 js 要写到 jquery 后面
 
 block body
-    //- sign-in.pug 中就可以将 block dashboard 清空, 或者直接重写 block body
+    //- 那些不需要 dashboard 的页面, 例如: signin.pug 中就可以将 block dashboard 清空, 或者直接重写 block body
+    //- 那些需要 dashboard 的页面, 就可以用 block content, 来继承 dashboard
     block dashboard
         block navbar
             nav.navbar.navbar-inverse.navbar-fixed-top

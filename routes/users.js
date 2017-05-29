@@ -1,9 +1,9 @@
 var express = require('express');
 var router = express.Router();
 
-// 这个对应 users.pug 界面, 下面三个是三个 Restful API, 没有对应界面
+// 这个对应 user-manager.pug 界面, 下面三个是三个 Restful API, 没有对应界面
 router.get('/', function(req, res, next) {
-    res.render('users', { title: 'Express' });
+    res.render('user-manager', { title: 'Express' });
   // res.send('respond with a resource');  // 显示这句话, 没有任何效果
 });
 // GET /user/userlist
@@ -16,6 +16,7 @@ router.get('/userlist', function(req, res, next) {
 router.post('/adduser', function(req, res) {
     var db = req.db;
     var collection = db.get('userlist');
+    console.log(req.body);  // { username: 'aa', email: 'bb', fullname: 'cc', age: 'dd', location: 'ee', gender: 'ff' }
     collection.insert(req.body, function(err, result){
         res.send( (err === null) ? {msg: ''} : {msg: err} );
     });

@@ -23,7 +23,7 @@ function populateTable() {  // 执行完下面的事件以后都会刷新 User L
         $('#userList table tbody').html(tableContent);  // 把所有内容都放到 HTML 表格中
     });
 };
-// 显示用户信息, 上面的是自动加载, 这里是鼠标事件触发
+// 显示用户信息, 上面的是自动加载, 这里是鼠标事件触发, 点击用户名, 在 div#userInfo 里面显示更加详细的信息
 function showUserInfo(event) {
     event.preventDefault();  // 阻止链接默认行为
     var thisUserName = $(this).attr('rel');  // 从链接中获取用户名
