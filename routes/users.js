@@ -1,9 +1,10 @@
 var express = require('express');
 var router = express.Router();
 
-/* GET users listing. */
+// 这个对应 users.pug 界面, 下面三个是三个 Restful API, 没有对应界面
 router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
+    res.render('users', { title: 'Express' });
+  // res.send('respond with a resource');  // 显示这句话, 没有任何效果
 });
 // GET /user/userlist
 router.get('/userlist', function(req, res, next) {

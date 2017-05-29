@@ -4,6 +4,7 @@
 [中文翻译](http://www.jianshu.com/p/8a90687576f9)
 [很多 bootstrap -> pug 的模板](http://rajasegar.github.io/JADE-Bootstrap/getting-started.html)
 [这里也有 bootstrap -> pug 模板](https://bootstrap3-jade-node-express-grunt.azurewebsites.net/)
+[基于 Node.js 的 Web 实时聊天项目](http://www.maiziedu.com/course/597/)
 ### Description
 我的个人网站, 主体是博客, 会挂上很多其他功能
 ``` zsh
@@ -12,10 +13,14 @@ users.js 路由只提供 Restful API, 不进行渲染
 ```
 ### Run
 ``` zsh
+# 这是没用 pm2 的情况
 npm install  # 安装 ./package.json 中的 dependencies
-nohupzsh npm start  # 在后台运行, alias 中有解释
-mkdir data  # 存放 MongoDB, 这个在 .gitignore 中屏蔽了, 其实 data 放哪都没关系的...
-sudomongod ~/github/jBlog/data/  # 启动 mongodb, 指定输出路径, 27017 端口, 具体命令参见 alias
+staexp  # 在后台运行, alias 中有解释, npm start & node-sass --watch
+
+# MongoDB
+# mkdir data  # 存放 MongoDB, 这个在 .gitignore 中屏蔽了, 其实 data 放哪都没关系的...
+# sudomongod ~/github/jBlog/data/  # 启动 mongodb, 指定输出路径, 27017 端口, 具体命令参见 alias
+docmongo  # 将上面两步直接换掉了
 mongo && use jblog && show dbs  # 连接数据库, 并创建新的, 其实是不存在的, 因为没有数据
 # 向数据库中添加数据, 可以用 [] 先定义, 再添加
 db.usercollection.insert({ "username" : "testuser1", "email" : "testuser1@testdomain.com" })
@@ -23,11 +28,17 @@ newstuff = [{ "username" : "testuser2", "email" : "testuser2@testdomain.com" }, 
 db.usercollection.insert(newstuff);
 # 上面是添加到 usercollection, 下面的会自动生成 userlist 并插入
 db.userlist.insert({'username' : 'test1','email' : 'test1@test.com','fullname' : 'Bob Smith','age' : 27,'location' : 'San Francisco','gender' : 'Male'})
-# 结束关闭
-kill node<Tab>  # 关闭 npm start
-killport 27017  # 关闭 mongod 的后台服务
-renpm  # qkill node && nohupzsh npm start
+# 这些数据可以不添加, 只有一个不太重要的界面用到了
+
+# 结束
+stoexp  # 关闭 pkill node && pkill sass # kill node<Tab>  # 也可以关闭
+dkill<Tab>/dkilla && drm<Tab>/drma  # 关闭 mongod 的后台服务; killport 27017 是针对本地的服务
+
+# 重启
+renpm  # qkill node && nohupzsh npm start, 不用重启 sass-watch
 ```
+### 文件介绍
+各个子目录中 README.md 和 index.js 中有介绍
 ### 增加新的功能
 ``` zsh
 1. ./routes/index.js 中添加路由, 也可在 users.js
