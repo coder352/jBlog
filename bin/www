@@ -21,9 +21,17 @@ app.set('port', port);
 
 var server = http.createServer(app);
 
+// My code: 将默认的 var server = http.createServer(app); 注释了, 但是 favicon 老是报错, 又用上了 http
+// var server = app.listen(app.get('port'), function() {
+//     debug('node_chat server listening on port ' + server.address().port);
+// });
+
 /**
  * Listen on provided port, on all network interfaces.
  */
+
+// My code: 将默认的 server.listen(port) 注释掉了, 但是用上面的 My code, favicon 会报错, 还是用会来原来的了
+require('../chat-server').listen(server);
 
 server.listen(port);
 server.on('error', onError);

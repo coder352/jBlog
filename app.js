@@ -26,6 +26,8 @@ app.use(bodyParser.json());  // 加载解析 json 的中间件
 app.use(bodyParser.urlencoded({ extended: false }));  // 加载解析 urlencoded 请求体的中间件
 app.use(cookieParser());  // 加载解析 cookie 的中间件
 app.use(express.static(path.join(__dirname, 'public')));  // 设置存放静态文件的目录, 告诉静态文件的位置，并且让静态文件夹作为顶层结构
+// My code, 使用了 bower
+app.use('/bower_components', express.static(__dirname + '/bower_components'));
 
 // My code, 连接数据库到路由件; 使程序使用自定义功能, 在使用之前我们先设置我们的路由件, 所以我们可以这样使用
 app.use(function(req, res, next){

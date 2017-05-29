@@ -16,6 +16,7 @@ users.js 路由只提供 Restful API, 不进行渲染
 ``` zsh
 # 这是没用 pm2 的情况
 npm install  # 安装 ./package.json 中的 dependencies
+bower install  # 一些前端库, eg. messenger 只有 bower 能安装
 staexp  # 在后台运行, alias 中有解释, npm start & node-sass --watch
 
 # MongoDB
@@ -48,6 +49,8 @@ renpm  # qkill node && nohupzsh npm start, 不用重启 sass-watch
 ```
 ### Tips
 ``` zsh
+// My code # 是我修改原来框架的地方
+
 # 只修改 ./routes/index.js 和 ./view/* 就可以完成大部分的功能
 # ./package.json 里面的版本很重要...
 
