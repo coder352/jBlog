@@ -1,20 +1,21 @@
 {
-  "name": "jblog",
-  "description": "",
-  "main": "",
-  "authors": [
-    "Ruipeng Jia <352111644@qq.com>"
-  ],
-  "license": "MIT",
-  "homepage": "https://github.com/coder352/jBlog",
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ],
-  "dependencies": {
-    "messenger": "~1.5.0"
-  }
+    "name": "jblog",
+    "description": "",
+    "main": "",
+    "authors": [
+        "Ruipeng Jia <352111644@qq.com>"
+    ],
+    "license": "MIT",
+    "homepage": "https://github.com/coder352/jBlog",
+    "ignore": [
+        "**/.*",
+        "node_modules",
+        "bower_components",
+        "test",
+        "tests"
+    ],
+    "dependencies": {
+        "bootstrap": "~3.3.0",
+        "messenger": "~1.5.0"
+    }
 }

@@ -5,22 +5,25 @@ html
         title= title
         meta(name="viewport",content="width=device-width, initial-scale=1")
         block styles
-            link(rel='stylesheet', href='http://cdn.bootcss.com/bootstrap/3.2.0/css/bootstrap.min.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/sco.js/1.1.0/css/sco.message.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/css/messenger.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/css/messenger-theme-flat.css')
+            //- chat-layout 负责整体布局, chat-message 负责聊天消息的样式
             link(rel='stylesheet', href='/stylesheets/chat-layout.css')
-            link(rel='stylesheet', href='/stylesheets/chat-sco.message.css')
             link(rel='stylesheet', href='/stylesheets/chat-message.css')
-            link(rel='stylesheet', href='/bower_components/messenger/build/css/messenger.css')
-            link(rel='stylesheet', href='/bower_components/messenger/build/css/messenger-theme-flat.css')
 
     body
         block content
         block scripts
-            script(src="http://cdn.bootcss.com/jquery/1.11.1/jquery.min.js")
-            script(src="http://cdn.bootcss.com/bootstrap/3.2.0/js/bootstrap.min.js")
-
-            script(src="/socket.io/socket.io.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/jquery/1.11.1/jquery.min.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js")
+            //- socket.io 实现了方便的 socket 通信
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
+            //- sco.message 是顶部的一些下拉通知
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/sco.js/1.1.0/js/sco.message.js')
+            //- messenger 是右下角的一些弹出的通知
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/js/messenger.min.js')
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/js/messenger-theme-flat.js")
             script(src='/javascripts/chat-socket.js')
             script(src='/javascripts/chat.js')
-            script(src='/javascripts/chat-sco.message.js')
-            script(src="/bower_components/messenger/build/js/messenger.min.js")
-            script(src="/bower_components/messenger/build/js/messenger-theme-flat.js")
