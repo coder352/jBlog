@@ -12,14 +12,14 @@ router.get('/', function(req, res, next) {
 
     PostModel.getPosts(author)
         .then(function(posts) {
-            res.render('posts', { posts: posts });
+            res.render('blog/posts.ejs', { posts: posts });
         })
         .catch(next);
 });
 
 // GET /posts/create 发表文章页
 router.get('/create', checkLogin, function(req, res, next) {
-    res.render('create');
+    res.render('blog/create.ejs');
 });
 
 // POST /posts 发表一篇文章
@@ -71,7 +71,7 @@ router.get('/:postId', function(req, res, next) {
                 throw new Error('该文章不存在');
             }
 
-            res.render('post', {
+            res.render('blog/post.ejs', {
                 post: post,
                 comments: comments
             });
@@ -92,7 +92,7 @@ router.get('/:postId/edit', checkLogin, function(req, res, next) {
             if (author.toString() !== post.author._id.toString()) {
                 throw new Error('权限不足');
             }
-            res.render('edit', {
+            res.render('blog/edit.ejs', {
                 post: post
             });
         })
@@ -113,7 +113,7 @@ router.post('/:postId/edit', checkLogin, function(req, res, next) {
         .then(function() {
             req.flash('success', '编辑文章成功');
             // 编辑成功后跳转到上一页
-            res.redirect(`/posts/${postId}`);
+            res.redirect(`blog/posts/${postId}`);
         })
         .catch(next);
 });
