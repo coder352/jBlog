@@ -28,9 +28,7 @@ router.post('/user-adduser', function(req, res){  // users.js 中还有一个 us
 });
 
 // 下面是聊天室 chat-* 的相关路由, 只涉及到一个界面 chat.pug, chat.pug 继承自 chat-layout.pug
-router.get('/chat', function(req, res) {
-    res.render('chat', { title: '聊天室' });
-});
+router.get('/chat', function(req, res) { res.render('chat', { title: '聊天室' }); });
 router.get('/chat-getuser', function(req, res) {
     var data = { name:"陈泽彬", sex:"男", img:"/images/chat/1.jpg" };
     res.json(data);
@@ -42,5 +40,8 @@ router.get('/chat-getalluser', function(req, res) {
         { name:"陈泽彬", sex:"男", img:"/images/chat/1.jpg" }];
     res.json(data);
 });
+
+// 下面是 tools 相关路由
+router.get('/tools/html2jade', function(req, res) { res.render('tools/html2jade', { title: 'HTML2Pug - HTML to Pug Online Realtime Converter' }); });
 
 module.exports = router;

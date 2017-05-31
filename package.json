@@ -1,24 +1,65 @@
 {
     "name": "jblog",
     "version": "0.0.0",
+    "description": "my first blog-website",
+    "main": "app.js",
     "private": true,
     "scripts": {
-        "start": "node ./bin/www"
+        "start": "node ./bin/www",
+        "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
     },
+    "author": "coder352",
+    "license": "MIT",
     "dependencies": {
         "body-parser": "~1.16.0",
         "bourbon": "~4.3.4",
+        "config-lite": "2.0.0",
+        "connect-flash": "0.1.1",
+        "connect-mongo": "1.3.2",
         "cookie-parser": "~1.4.3",
+        "consolidate": "0.14.5",
         "debug": "~2.6.0",
+        "echarts": "~3.6.1",
+        "ejs": "2.5.2",
         "express": "~4.14.1",
+        "express-formidable": "1.0.0",
+        "express-session": "1.14.2",
+        "express-winston": "2.0.0",
         "jade": "~1.11.0",
         "jade-bootstrap": "~1.0.14",
+        "marked": "0.3.6",
+        "moment": "2.15.2",
         "mongodb": "^2.2.25",
+        "mongolass": "2.4.1",
         "monk": "^4.0.0",
         "morgan": "~1.7.0",
+        "objectid-to-timestamp": "1.3.0",
         "pug": "^2.0.0-rc.1",
         "serve-favicon": "~2.3.2",
+        "sha1": "1.1.1",
         "socket.io": "~2.0.0",
-        "underscore": "~1.6.0"
+        "underscore": "~1.6.0",
+        "winston": "2.2.0"
+    },
+    "devDependencies": {
+        "istanbul": "0.4.5",
+        "mocha": "3.1.2",
+        "supertest": "2.0.1"
+    },
+    "//": {
+        "config-lite": "根据 NODE_ENV 的不同执行不同的配置, 默认 default, eg. NODE_ENV=test npm start",
+        "connect-flash": "页面通知提示的中间件, 登录提示, 刷新消失, 基于 session 实现, 结合 express-session 使用",
+        "connect-mongo": "将 session 存储于 mongodb, 结合 express-session 使用",
+        "consolidate": "ejs 和 jade/pug 一块用",
+        "express-formidable": "接收表单及文件的上传中间件",
+        "express-session": "session 中间件",
+        "express-winston": "基于 winston 的用于 express 的日志中间件",
+        "marked": "markdown 解析",
+        "moment": "时间格式化",
+        "mongolass": "mongodb 驱动",
+        "monk": "以后会换成 Mongoose",
+        "objectid-to-timestamp": "根据 ObjectId 生成时间戳",
+        "sha1": "sha1 加密, 用于密码加密",
+        "winston": "日志"
     }
 }

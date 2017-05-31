@@ -5,6 +5,7 @@
 [很多 bootstrap -> pug 的模板](http://rajasegar.github.io/JADE-Bootstrap/getting-started.html)
 [这里也有 bootstrap -> pug 模板](https://bootstrap3-jade-node-express-grunt.azurewebsites.net/)
 [基于 Node.js 的 Web 实时聊天项目](http://www.maiziedu.com/course/597/)
+[N-blog](https://github.com/nswbmw/N-blog)
 ### Description
 我的个人网站, 主体是博客, 会挂上很多其他功能
 ``` zsh

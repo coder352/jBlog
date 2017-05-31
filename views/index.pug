@@ -1,19 +1,12 @@
 extends layout
 
 block content
-    h1= title
-    p Welcome to #{title}
-    .container
-        .content
-            table.table.table-striped
-                thead
-                    tr
-                        th Table
-                        th Heading
-                tbody
-                    tr
-                        td Blah
-                        td Test
-                    tr
-                        td Hello
-                        td World
+    .jumbotron
+        .container(align='center')
+            h2.text-info(style='font-family:宋体;font-weight:bold;font-size:49px') 逼乎
+            br
+            .text-muted 与世界分享你的逼格
+            br
+            br
+            p
+                a.btn.btn-success(role='button', href='#') 注册
