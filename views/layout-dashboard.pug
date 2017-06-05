@@ -9,10 +9,10 @@ extends ../node_modules/jade-bootstrap/_bootstrap
 append styles
     //- _bootstrap.pug 的 block styles 在 head 的末尾
     //- link(rel="stylesheet",href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css")
-    link(rel='stylesheet', href='/stylesheets/style.css')
     //- jade-bootstrap 里面的 css 就是 github/bootstrap/docs/example 中的, 但是可能不好访问, 所以放到本地了
     link(rel='stylesheet', href='/node_modules/jade-bootstrap/css/dashboard.css')
     link(rel='stylesheet', href='/node_modules/jade-bootstrap/css/sticky-footer.css')
+    link(rel='stylesheet', href='/stylesheets/style.css')
 append scripts
     //- body
     //-     block body

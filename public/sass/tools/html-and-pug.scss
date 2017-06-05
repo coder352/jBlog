@@ -1,0 +1,37 @@
+html, body {
+    margin: 0px;
+    background-color: #00a86b;
+    text-align: left;  // 默认就是 left
+}
+
+fieldset {
+	float: left;
+    width: 50%;
+}
+
+fieldset.actions {
+	float: none;
+    width: 1000px;
+    text-align: center;
+}
+
+textarea {
+	border-radius: 5px;
+	width: 550px;
+    height: 100%;
+}
+
+button.convert{
+    background: transparent no-repeat scroll 0 0;
+    border: 0px;
+    width: 128px;
+    height: 128px;
+    text-indent: -999em;
+    background-image: url(/images/tools/html2pug/right.png);
+}
+
+.CodeMirror {
+    min-width: 550px;
+    border: 1px solid #000;
+    border-radius: 5px;
+}

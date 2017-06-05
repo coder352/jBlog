@@ -41,12 +41,20 @@ router.get('/chat-getalluser', function(req, res) {
     res.json(data);
 });
 //================================================================
-// 下面是 tools 相关路由
-router.get('/tools/html2jade', function(req, res) { res.render('tools/html2jade', { title: 'HTML2Pug - HTML to Pug Online Realtime Converter' }); });
-html2jade = require('html2jade');
-router.post('/tools/html2jade-convert', function (req, res) {
+// html2pug
+router.get('/tools/html2pug', function(req, res) { res.render('tools/html2pug', { title: 'HTML2Pug - HTML to Pug Online Realtime Converter' }); });
+html2jade = require('html2jade');  // html2jade 这个项目还没改名字...
+router.post('/tools/html2pug-convert', function (req, res) {
 	var html = req.body.html;
-    html2jade.convertHtml(html, {}, function (err, jade) { res.json({ jade: jade }); });
+    html2jade.convertHtml(html, {nspaces: 4}, function (err, pug) { res.json({ pug: pug}); });
+    // html2jade.convertHtml("<html><meta>", {nspaces: 4}, function (err, jade) { console.log(jade) });  // 用这就话去进行单独测试
+});
+// pug2html
+router.get('/tools/pug2html', function(req, res) { res.render('tools/pug2html', { title: 'Pug2HTML- HTML to Pug Online Realtime Converter' }); });
+router.post('/tools/pug2html-convert', function (req, res) {
+	var pug = req.body.pug;
+    var exec = require('child_process').exec;
+    exec('echo ' + pug + '| pug -P -p .', function (error, stdout, stderr) { res.json({ html: stdout}); });
 });
 //================================================================
 // Echarts 相关路由

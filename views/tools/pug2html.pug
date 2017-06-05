@@ -1,0 +1,14 @@
+//- https://github.com/aaronpowell/html2jade-website 其他的功能慢慢加
+extends layout
+append styles
+    link(rel='stylesheet', href='/stylesheets/tools/html-and-pug.css')
+append scripts
+    script(src='/javascripts/tools/html-and-pug.js')
+block content
+    .page-header #[h1 Pug to HTML converter]
+    .container
+        form.pug(method='post')
+            fieldset #[strong Pug:] #[textarea#pug(name='pug')]
+            fieldset #[strong HTML:] #[textarea#html(name='html')]
+            fieldset.actions
+                button.convert(type='submit') Convert!
