@@ -11,4 +11,11 @@ user-manager.pug 是在同一个界面上进行增删, 并且显示, 后台调�
 ### 现状
 ``` zsh
 ./tools/html2jade.pug  # 半成品, 还没实现功能
+./blog  # 失败, 还是慢慢来吧, 卡在注册时, 照片无法保存到本地的 /images, app.js 好多东西台大了, 我都注释掉了, 用的时候把 代码部分的注释取消掉
+```
+### Tips
+``` zsh
+<a class="item" href="posts/create">发表文章</a>
+href 后面的不以 / 开头, 是使用的相对当前的路径
+以 / 开头就是指的从网站的跟路径开始
 ```

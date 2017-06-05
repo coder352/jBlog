@@ -7,7 +7,7 @@ var checkNotLogin = require('../../middlewares/blog-check').checkNotLogin;
 
 // GET /signin 登录页
 router.get('/', checkNotLogin, function(req, res, next) {
-    res.render('/blog/signin.ejs');
+    res.render('blog/signin.ejs');
 });
 
 // POST /signin 用户登录

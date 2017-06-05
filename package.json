@@ -6,7 +6,8 @@
     "private": true,
     "scripts": {
         "start": "node ./bin/www",
-        "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha"
+        "test": "node --harmony ./node_modules/.bin/istanbul cover ./node_modules/.bin/_mocha",
+        "pm2": "NODE_ENV=production pm2 start index.js --node-args='--harmony' --name 'myblog'"
     },
     "author": "coder352",
     "license": "MIT",

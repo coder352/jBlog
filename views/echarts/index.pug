@@ -1,0 +1,6 @@
+extends layout
+append scripts
+    script(src='/javascripts/echarts/index.js')
+block content
+    //- 为 ECharts 准备一个具备大小 (宽高) 的 Dom
+    #main(style='width: 600px;height:400px;')

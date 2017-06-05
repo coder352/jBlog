@@ -1,14 +1,13 @@
-module.exports = function(app) {
-    app.get('/', function(req, res) { res.redirect('/posts'); });  // 转到路由 /posts
-    app.use('/signup', require('./signup'));
-    app.use('/signin', require('./signin'));
-    app.use('/signout', require('./signout'));
-    app.use('/posts', require('./posts'));
+var express = require('express');
+var router = express.Router();
 
-    // 404 page
-    app.use(function(req, res) {
-        if (!res.headersSent) {
-            res.status(404).render('404');
-        }
-    });
-};
+// router.get('/', function(req, res, next) { res.render('blog/header.ejs', { title: 'Express' }); });
+router.get('/', function(req, res) { res.redirect('/blog/posts'); });  // 转到路由 /posts
+// router.get('/posts', function(req, res) { res.render('blog/header.ejs', { title: 'Express' }); });  // 上面两个进行的测试
+// router.get('/signup', require('./signup'));
+// router.get('/signin', require('./signin'));
+// router.get('/signout', require('./signout'));
+// router.use('/posts', require('./posts'));
+
+
+module.exports = router;
