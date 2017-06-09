@@ -39,7 +39,8 @@ function showUserInfo(event) {
 // 添加用户
 function addUser(event) {
     event.preventDefault();
-    var errorCount = 0;      $('#addUser input').each(function(index, val) {
+    var errorCount = 0;
+    $('#addUser input').each(function(index, val) {
         if ($(this).val() === '') { errorCount++ }
     });  // 最基本的验证, 如果字段为空, errorCount 自增 1 次
     if (errorCount === 0) {  // 确定 errorCount 的数值为 0, 如果是 0, 将所有用户信息打包成一个对象

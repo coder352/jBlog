@@ -10,26 +10,16 @@ block content
         //- USER INFO, 下面分行写可以只让 第一行加粗, 第二行不加粗
         #userInfo
             h2 User Info
-            p
-                strong Name:
-                span#userInfoName
-                br
-                strong Age:
-                span#userInfoAge
-                br
-                strong Gender:
-                span#userInfoGender
-                br
-                strong Location:
-                span#userInfoLocation
+            p.
+                #[strong Name:]     #[span#userInfoName]     #[br]
+                #[strong Age:]      #[span#userInfoAge]      #[br]
+                #[strong Gender:]   #[span#userInfoGender]   #[br]
+                #[strong Location:] #[span#userInfoLocation] #[br]
         //- USER LIST
         #userList
             h2 User List
             table
-                thead
-                    th UserName(点击显示详细信息)
-                    th Email
-                    th Delete?
+                thead #[th UserName(点击显示详细信息)] #[th Email] #[th Delete?]
                 tbody
         //- ADD USER
         #addUser
@@ -37,13 +27,7 @@ block content
             // req.body: { username: 'aa', email: 'bb', fullname: 'cc', age: 'dd', location: 'ee', gender: 'ff' }
             // 点击按钮后提交的就是一个字典
             fieldset
-                input#inputUserName(type='text', placeholder='Username')
-                input#inputUserEmail(type='text', placeholder='Email')
-                br
-                input#inputUserFullname(type='text', placeholder='Full Name')
-                input#inputUserAge(type='text', placeholder='Age')
-                br
-                input#inputUserLocation(type='text', placeholder='Location')
-                input#inputUserGender(type='text', placeholder='gender')
-                br
+                p #[input#inputUserName(type='text', placeholder='Username')] #[input#inputUserEmail(type='text', placeholder='Email')]
+                p #[input#inputUserFullname(type='text', placeholder='Full Name')] #[input#inputUserAge(type='text', placeholder='Age')]
+                p #[input#inputUserLocation(type='text', placeholder='Location')] #[input#inputUserGender(type='text', placeholder='gender')]
                 button#btnAddUser Add User

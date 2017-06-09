@@ -18,7 +18,6 @@
 	exports.convert_to_pug = function (html, cb) { $.post('/tools/html2pug-convert', { html: html }, cb); };
     $('form.html').submit(function (e) {
         e.preventDefault();
-        var form = $(this);
         var html = htmlEditor.getValue();
         exports.convert_to_pug(html, function (result) {
             if (!/<html>/.test(html)) {
@@ -41,7 +40,6 @@
 	exports.convert_to_html = function (pug, cb) { $.post('/tools/pug2html-convert', { pug: pug}, cb); };
     $('form.pug').submit(function (e) {
         e.preventDefault();
-        var form = $(this);
         var pug = pugEditor.getValue();
         exports.convert_to_html(pug, function (result) {
             console.log(result.html);

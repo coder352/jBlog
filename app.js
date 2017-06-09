@@ -157,5 +157,5 @@ if (module.parent) {  // 这样写更加方便, 可以不用 ./bin/www, 也可�
     var server = app.listen(config.port, function () {  // 监听端口, 启动程序
         console.log(`${pkg.name} listening on port ${config.port}`);
     });
-    require('./chat-server').listen(server);  // 还有一个聊天室的服务要开
+    require('./chat-server').listen(server);  // 还有一个聊天室的服务要开, 使用的是 socket.io
 }
