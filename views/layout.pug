@@ -1,26 +1,62 @@
+//- Description: 常用的 CDN 模板集合, cplayout 复制到当前目录, 根据项目简单修改
+//- Usage: 在下面的布局中插入代码
+//- extends layout
+//- append styles
+//- append scripts
+//- block content
 doctype html
-html
+html(lang="en")
     head
-        meta(name='viewport', content='width=device-width')
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        //- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name="author", content="Jia Ruipeng")
+        meta(name="description",content="Chinese student")
         title= title
         block head-sub
-        //- bootstrap
         block styles
+            //- bootstrap font-awesome
             link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
-            link(rel='stylesheet', href='/stylesheets/style.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css')
+            //- animate(for WOW)
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.css')
+            //- messenger(右下角会弹出一会提示框, theme 可选, 有好多)
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/css/messenger.css')
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/css/messenger-theme-flat.css')
+            //- codemirror
+            //- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/codemirror.css')
+            //- link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/theme/solarized.min.css')
+            //- link(rel='stylesheet', href='/stylesheets/style.css')
     body
         block content
-        //- jquery bootstrap socket.io jade ace require
-        //- jszip jszip-utils filesaver alertify, for blog, 暂时放弃
         block scripts
+            //- jquery bootstrap socket.io jade ace require vue vue-route
             script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
             script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js")
             script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
             script(src="https://cdnjs.cloudflare.com/ajax/libs/jade/1.11.0/jade.js")
             script(src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.2.6/ace.js")
             script(src="https://cdnjs.cloudflare.com/ajax/libs/require.js/2.3.3/require.js")
-
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.3.3/vue.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/vue-router/2.5.3/vue-router.js")
+            //- WOW, socket.io
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.js")
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/2.0.1/socket.io.js")
+            //- messenger
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/js/messenger.min.js')
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/messenger/1.5.0/js/messenger-theme-flat.js")
+            //- jszip jszip-utils filesaver alertify, for blog, 暂时放弃
             //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js")
             //- script(src="https://cdnjs.cloudflare.com/ajax/libs/jszip-utils/0.0.2/jszip-utils.js")
             //- script(src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.js")
             //- script(src="https://cdnjs.cloudflare.com/ajax/libs/alertify.js/0.5.0/alertify.min.js")
+
+            //- codemirror; 在编辑框里能够缩进和代码高亮, 是因为这里引入了相关的 js, 别的地方都没有指定
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/codemirror.min.js')
+            //- xml, javascript, css, htmlmixed, pug 几种语言的高亮和缩进
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/xml/xml.min.js')
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/javascript/javascript.min.js')
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/css/css.min.js')
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/htmlmixed/htmlmixed.min.js')
+            //- script(src='https://cdnjs.cloudflare.com/ajax/libs/codemirror/5.26.0/mode/pug/pug.min.js')

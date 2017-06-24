@@ -1,0 +1,30 @@
+extends layout
+append styles
+    style.
+        .carousel { width: 600px; height: 300px; }
+        .item { width: 100%; height: 100%; }
+block content
+    #carousel-example-generic.carousel.slide(data-ride='carousel')
+        // Indicators; 图片下方的指示
+        ol.carousel-indicators
+            li.active(data-target='#carousel-example-generic', data-slide-to='0')
+            li(data-target='#carousel-example-generic', data-slide-to='1')
+            li(data-target='#carousel-example-generic', data-slide-to='2')
+        // Wrapper for slides
+        .carousel-inner(role='listbox')
+            .item.active
+                img(src='/images/landscape/Lifelines.jpg', alt='First')
+                .carousel-caption #[h4.alpha 图片一]
+            .item
+                img(src='/images/landscape/Take_Off.jpg', alt='Second')
+                .carousel-caption #[h4.alpha 图片二]
+            .item
+                img(src='/images/landscape/The_Expanse.jpg', alt='Third')
+                .carousel-caption #[h4.alpha 图片三]
+        //- Controls; 左右方向的两个控制按钮
+        a.left.carousel-control(href='#carousel-example-generic', role='button', data-slide='prev')
+            span.glyphicon.glyphicon-chevron-left(aria-hidden='true')
+            span.sr-only Previous
+        a.right.carousel-control(href='#carousel-example-generic', role='button', data-slide='next')
+            span.glyphicon.glyphicon-chevron-right(aria-hidden='true')
+            span.sr-only Next

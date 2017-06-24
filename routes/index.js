@@ -5,6 +5,11 @@ router.get('/', function(req, res, next) { res.render('index', { title: 'Express
 router.get('/signin', function(req, res, next) { res.render('signin', { title: 'Express' }); });
 router.get('/helloworld', function(req, res) { res.render('helloworld', { title: 'Hello, World!' }); });
 //================================================================
+// about 系列
+router.get('/about-me', function(req, res) { res.render('about-me', { title: 'Jia Ruipeng!' }); });
+router.get('/about-welcome', function(req, res) { res.render('about-welcome', { title: 'Welcome to here!' }); });
+router.get('/about-home', function(req, res) { res.render('about-home', { title: 'Welcome to home!' }); });
+//================================================================
 // 下面的三个对应的是 user-add.pug user-list.pug 两个界面, 在 user-add.pug 中点击确定按钮后自动跳转到 user-list.pug 界面
 router.get('/user-add', function(req, res){ res.render('user-add', { title: 'Add New User' }); });
 router.get('/user-list', function(req, res) {
@@ -51,10 +56,14 @@ router.post('/tools/html2pug-convert', function (req, res) {
 });
 // pug2html
 router.get('/tools/pug2html', function(req, res) { res.render('tools/pug2html', { title: 'Pug2HTML- HTML to Pug Online Realtime Converter' }); });
+var pug2html = require('pug')  // 这样只要 package.json 中有安装 pug, 就不用在 docker 中安装 pug 了
 router.post('/tools/pug2html-convert', function (req, res) {
-	var pug = req.body.pug;
-    var exec = require('child_process').exec;
-    exec('echo ' + pug + '| pug -P -p .', function (error, stdout, stderr) { res.json({ html: stdout}); });
+	var pug = req.body.pug;  // console.log(pug);
+    // var exec = require('child_process').exec;  // 这句和下面一句是通过外部命令执行, 但是放到 docker 中还要安装其他的 ...
+    // exec('echo ' + pug + '| pug -P -p .', function (error, stdout, stderr) { res.json({ html: stdout}); });
+    pug2html.render(pug, {pretty: '    '}, function (error, stdout, stderr) { res.json({ html: stdout}); });
+    // https://pugjs.org/api/reference.html 查看 API, 用下面一句话进行测试
+    // pug2html.render('html\n    body\n    html\n        h1', {pretty: '    '}, function (error, stdout, stderr) { console.log(stdout); });
 });
 //================================================================
 // Echarts 相关路由

@@ -1,0 +1,232 @@
+extends layout
+append styles
+    link(rel="stylesheet" href="stylesheets/about-me.css")
+append scripts
+    script.
+        new WOW().init();
+block content
+    //- ================================================================
+    //- NAVIGATION
+    #myNavbar.navbar.navbar-default.navbar-fixed-top(role="navigation")
+        .container
+            .navbar-header
+                button.navbar-toggle(type="button" data-toggle="collapse" data-target=".navbar-collapse")
+                    span.icon-bar
+                    span.icon-bar
+                    span.icon-bar
+                a.navbar-brand(href="#") Media
+            .navbar-collapse.collapse
+                ul.nav.navbar-nav.navbar-right
+                    li #[a(href="#header") Home]
+                    li #[a(href="#services") services]
+                    li #[a(href="#pricing") pricing]
+                    li #[a(href="#team") team]
+                    li #[a(href="#client") clients]
+                    li #[a(href="#contact") contact]
+    //- ================================================================
+    //- Header
+    #header.header
+        .container
+            .row
+                .col-lg-6.col-md-6.wow.bounceInLeft
+                    h1 Responsive Web Design
+                    p Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
+                    button.btn.btn-lg.btn-primary Buy Now
+                    button.btn.btn-lg.btn-success View Detail
+                .col-lg-6.col-md-6.wow.bounceInRight
+                    img(src="/images/about-me/Responsive-Web-Design.png" alt="")
+    //- ================================================================
+    //- Services
+    #services.services
+        .container
+            h2.wow.fadeInUp Services
+            p.wow.fadeInUp(data-wow-delay="0.4") Lorem Ipsum is simply dummy text of the printing and typesettin dummy text
+            .row
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.8s")
+                    i.fa.fa-desktop(aria-hidden="true")
+                    h4 web design
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.4s")
+                    i.fa.fa-mobile(aria-hidden="true")
+                    h4 Mobile Apps
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="0.8s")
+                    i.fa.fa-database(aria-hidden="true")
+                    h4 Database
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="0.4s")
+                    i.fa.fa-university(aria-hidden="true")
+                    h4 Consulting
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+    //- ================================================================
+    //- Pricing
+    #pricing.pricing
+        .container
+            .row
+                h2.wow.fadeInUp Pricing
+                p.wow.fadeInUp(data-wow-delay="0.4") orem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.flipInY(data-wow-delay="0.8s")
+                    .packages
+                        h4 Bronze
+                        h1 9.99
+                        b Monthly
+                        p Lorem Ipsum passages, and more recently with desktop
+                        hr
+                        li 100 Users
+                        li SSL Certificate
+                        li Online Support
+                        li 300GB Disckspace
+                        li 100 Email Address
+                        li MySQL Database
+                        button.btn.btn-success Get Started
+                .col-lg-3.col-md-3.wow.flipInY(data-wow-delay="1.2s")
+                    .packages
+                        h4 Silver
+                        h1 19.99
+                        b Monthly
+                        p Lorem Ipsum passages, and more recently with desktop
+                        hr
+                        li 100 Users
+                        li SSL Certificate
+                        li Online Support
+                        li 300GB Disckspace
+                        li 100 Email Address
+                        li MySQL Database
+                        button.btn.btn-success Get Started
+                .col-lg-3.col-md-3.wow.flipInY(data-wow-delay="1.6s")
+                    .packages
+                        h4 Gold
+                        h1 29.99
+                        b Monthly
+                        p Lorem Ipsum passages, and more recently with desktop
+                        hr
+                        li 100 Users
+                        li SSL Certificate
+                        li Online Support
+                        li 300GB Disckspace
+                        li 100 Email Address
+                        li MySQL Database
+                        button.btn.btn-success Get Started
+                .col-lg-3.col-md-3.wow.flipInY(data-wow-delay="2s")
+                    .packages
+                        h4 Premium
+                        h1 39.99
+                        b Monthly
+                        p Lorem Ipsum passages, and more recently with desktop
+                        hr
+                        li 100 Users
+                        li SSL Certificate
+                        li Online Support
+                        li 300GB Disckspace
+                        li 100 Email Address
+                        li MySQL Database
+                        button.btn.btn-success Get Started
+    //- ================================================================
+    //- Team
+    #team.team
+        .container
+            .row
+                h2.wow.fadeInUp Meet our team
+                p.wow.fadeInUp(data-wow-delay="0.4") Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="2s")
+                    img.img-circle(src="/images/about-me/team/team-1.jpg" alt="")
+                    h4 John Doe
+                    b CEO and Founder
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                    a(href="#") #[i.fa.fa-facebook(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-twitter(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-linkedin(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-pinterest(aria-hidden="true")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.6s")
+                    img.img-circle(src="/images/about-me/team/team-2.jpg" alt="")
+                    h4 John Doe
+                    b CEO and Founder
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                    a(href="#") #[i.fa.fa-facebook(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-twitter(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-linkedin(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-pinterest(aria-hidden="true")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.2s")
+                    img.img-circle(src="/images/about-me/team/team-3.jpg" alt="")
+                    h4 John Doe
+                    b CEO and Founder
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                    a(href="#") #[i.fa.fa-facebook(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-twitter(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-linkedin(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-pinterest(aria-hidden="true")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(0.8="")
+                    img.img-circle(src="/images/about-me/team/team-4.jpg" alt="")
+                    h4 John Doe
+                    b CEO and Founder
+                    p Lorem Ipsum passages, and more recently with desktop publishing software
+                    a(href="#") #[i.fa.fa-facebook(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-twitter(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-linkedin(aria-hidden="true")]
+                    a(href="#") #[i.fa.fa-pinterest(aria-hidden="true")]
+    //- ================================================================
+    //- Clients
+    #client.clients
+        .container
+            .row
+                h2.wow.fadeInUp Trusted by
+                p.wow.fadeInUp(data-wow-delay="0.4") Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="2s")
+                    li #[img(src="/images/about-me/clients/client1.png" alt="")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.6s")
+                    li #[img(src="/images/about-me/clients/client2.png" alt="")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="1.2s")
+                    li #[img(src="/images/about-me/clients/client3.png" alt="")]
+                .col-lg-3.col-md-3.wow.fadeInLeft(data-wow-delay="0.8s")
+                    li #[img(src="/images/about-me/clients/client4.png" alt="")]
+    //- ================================================================
+    //- Contact
+    #contact.contact
+        .container
+            .row
+                h2.wow.fadeInUp Contact
+                p.wow.fadeInUp(data-wow-delay="0.4") Lorem Ipsum passages, and more recently with desktop publishing software
+                .col-lg-6.col-md-6
+                    .input-group.input-group-lg.wow.fadeInUp(data-wow-delay="0.8s")
+                        span#sizing-addon1.input-group-addon
+                            i.fa.fa-user(aria-hidden="true")
+                        input.form-control(type="text" aria-describedby="sizing-addon1" placeholder="Full Name")
+                    .input-group.input-group-lg.wow.fadeInUp(data-wow-delay="1.2s")
+                        span#sizing-addon1.input-group-addon
+                            i.fa.fa-envelope(aria-hidden="true")
+                        input.form-control(type="text" aria-describedby="sizing-addon1" placeholder="Email Address")
+                    .input-group.input-group-lg.wow.fadeInUp(data-wow-delay="1.6s")
+                        span#sizing-addon1.input-group-addon
+                            i.fa.fa-phone(aria-hidden="true")
+                        input.form-control(type="text" aria-describedby="sizing-addon1" placeholder="Phone Number")
+                .col-lg-6.col-md-6
+                    .input-group.wow.fadeInUp(data-wow-delay="2s")
+                        textarea.form-control(name="" id="" cols="80" rows="6")
+                    button.btn.btn-lg.wow.fadeInUp(data-wow-delay="2.4s") Submit Your Message
+    //- ================================================================
+    //- Footer
+    #footer.footer
+        .container
+            .row
+                .col-lg-4.col-md-4
+                    h4.wow.fadeInUp Contact Us
+                    p #[i.fa.fa-home(aria-hidden="true")] 111 Main Street, Washington DC, 22222
+                    p #[i.fa.fa-envelope(aria-hidden="true")] info@media.com
+                    p #[i.fa.fa-phone(aria-hidden="true")] +1 222 222 2222
+                    p #[i.fa.fa-globe(aria-hidden="true")] www.media.com
+                .col-lg-4.col-md-4
+                    h4 About
+                    p #[i.fa.fa-square-o(aria-hidden="true")] About Us
+                    p #[i.fa.fa-square-o(aria-hidden="true")] Privacy
+                    p #[i.fa.fa-square-o(aria-hidden="true")] Term & Condition
+                .col-lg-4.col-md-4
+                    h4 Stay in touch
+                    i.social.fa.fa-facebook(aria-hidden="true")
+                    i.social.fa.fa-twitter(aria-hidden="true")
+                    i.social.fa.fa-linkedin(aria-hidden="true")
+                    i.social.fa.fa-pinterest(aria-hidden="true")
+                    i.social.fa.fa-youtube(aria-hidden="true")
+                    i.social.fa.fa-github(aria-hidden="true")
+                    br
+                    input(type="email" placeholder="Subscribe For Updates")
+                    button.btn.btn-success Subscribe

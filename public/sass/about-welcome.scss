@@ -1,0 +1,64 @@
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    width: 100%;
+    font-size: 16px;
+}
+.intro {
+    height: 100%;
+    width: 100%;
+    margin: auto;
+    background: url("/images/full-screen-bg.jpg") no-repeat 50% 50%;
+    display: table;
+    top: 0;
+    background-size: cover;  // 是图片可以 收缩/放大 到真个页面大小
+}
+.intro .inner {
+    display: table-cell;  // 是文字出现在 table 中间
+    vertical-align: middle;
+    width: 100%;
+    max-width: none;
+}
+.intro .inner .content {
+    max-width: 500px;
+    margin: 0 auto;
+    text-align: center;
+}
+.intro .inner .content h1 {
+    color: #F9F8F4;
+    text-shadow: 0px 0px 300px #000;  // 一些阴影
+    font-size: 500%;  // 继承父类的 font-size 并且 500%
+}
+.intro .inner .content .btn {
+    border-radius: 9px;
+    color: #036A81;
+    font-size: 135%;
+    padding: 10px 20px;
+    border: solid #036A81 3px;
+    text-transform: uppercase;
+    text-decoration: none;
+}
+.intro .inner .content .btn:hover {
+    color: #fff;
+    border: solid #fff 3px;
+}
+p {
+    font-size: 160%;
+    line-height: 210%;
+    text-align: justify;
+    margin: 3%;
+}
+@media screen and (max-width: 768px) {
+    .content h1 {
+        font-size: 250%;
+    }
+    .btn {
+        font-size: 110%;
+        padding: 7px 15px;
+    }
+    p {
+        font-size: 100%;
+        line-height: 160%;
+    }
+}

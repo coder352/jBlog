@@ -7,6 +7,7 @@
 [基于 Node.js 的 Web 实时聊天项目](http://www.maiziedu.com/course/597/)
 [N-blog](https://github.com/nswbmw/N-blog)
 [html2pug](https://github.com/aaronpowell/html2jade-website)
+[Youtube Bootstrap Responsive Landing Page](https://www.youtube.com/channel/UCEzbuVkoykjK1KPV2n0SWEA/videos)
 ### Description
 我的个人网站, 主体是博客, 会挂上很多其他功能
 ``` zsh
