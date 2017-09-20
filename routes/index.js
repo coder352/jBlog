@@ -68,6 +68,16 @@ router.post('/tools/pug2html-convert', function (req, res) {
 //================================================================
 // Echarts 相关路由
 var os = require('os');
-router.get('/echarts/', function(req, res) { res.render('echarts/index', { freemem: os.freemem() ,totalmem:os.totalmem()} )});
+router.get('/echarts/', function(req, res) { res.render('echarts/index', { freemem: os.freemem(), totalmem:os.totalmem()} )});
+//================================================================
+// Baidu_Map 相关路由
+router.get('/baidumap/l1', function(req, res) { res.render('baidumap/l1_simple_config', { title: 'Hello World!' })});
+router.get('/baidumap/l2', function(req, res) { res.render('baidumap/l2_control', { title: 'Hello World!' })});
+router.get('/baidumap/l3', function(req, res) { res.render('baidumap/l3_line_picture_custom', { title: 'Hello World!' })});
+router.get('/baidumap/l4', function(req, res) { res.render('baidumap/l4_event', { title: 'Hello World!' })});
+router.get('/baidumap/l5', function(req, res) { res.render('baidumap/l5_layer', { title: 'Hello World!' })});
+router.get('/baidumap/l6', function(req, res) { res.render('baidumap/l6_search', { title: 'Hello World!' })});
+router.get('/baidumap/l7', function(req, res) { res.render('baidumap/l7_bus', { title: 'Hello World!' })});
+router.get('/baidumap/l8', function(req, res) { res.render('baidumap/l8_drive', { title: 'Hello World!' })});
 
 module.exports = router;

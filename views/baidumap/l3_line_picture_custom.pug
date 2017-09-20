@@ -1,0 +1,24 @@
+extends layout
+append styles
+    style.
+        html{height: 100%}
+        body{height: 100%; margin: 0px; padding: 0px}
+        #container{height: 100%}
+append scripts
+    script.
+        var map = new BMap.Map("container");          //- 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);  //- 创建中心点坐标, 北京
+        map.centerAndZoom(point, 15);                 //- 地图初始化, 设置地图级别
+        map.enableScrollWheelZoom(true);              //- 开启鼠标滚轮缩放, 默认是关闭的
+        //- 标注, 还可以自定义标注, 见文档
+        var marker = new BMap.Marker(point);  //- 创建标注, 红色小气球
+        map.addOverlay(marker);               //- 将标注添加到地图中
+        //- 折线
+        var polyline = new BMap.Polyline([
+            new BMap.Point(116.399, 39.910),
+            new BMap.Point(116.405, 39.920) ],
+            {strokeColor:"blue", strokeWeight:6, strokeOpacity:0.5}  //- 6 像素宽的蓝色折线
+        );
+        map.addOverlay(polyline);
+block content
+    #container

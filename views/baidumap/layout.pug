@@ -1,0 +1,26 @@
+doctype html
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(http-equiv="X-UA-Compatible" content="IE=edge")
+        meta(name="viewport", content="width=device-width, initial-scale=1")
+        //- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags
+        meta(name="author", content="Jia Ruipeng")
+        meta(name="description",content="Chinese student")
+        title= title
+        block head-sub
+        block styles
+            //- bootstrap font-awesome
+            link(rel='stylesheet', href='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
+            //- Baidu Map
+            link(rel='stylesheet', href="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.css")
+    body
+        block content
+        block scripts
+            //- jquery bootstrap socket.io jade ace require vue vue-route
+            script(src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
+            script(src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js")
+            //- Baidu Map
+            script(src='http://api.map.baidu.com/api?v=2.0&ak=6UB3psPHYIfAZYnuB4t36gokzzuMCjGk')
+            script(src="http://api.map.baidu.com/library/SearchInfoWindow/1.5/src/SearchInfoWindow_min.js")
+

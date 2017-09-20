@@ -1,0 +1,22 @@
+extends layout
+append styles
+    style.
+        html{height: 100%}
+        body{height: 100%; margin: 0px; padding: 0px}
+        #container{height: 100%}
+append scripts
+    script.
+        var map = new BMap.Map("container");          //- 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);  //- 创建中心点坐标, 北京
+        map.centerAndZoom(point, 15);                 //- 地图初始化, 设置地图级别
+        map.enableScrollWheelZoom(true);              //- 开启鼠标滚轮缩放, 默认是关闭的
+        //- 公交导航的区域范围只能是市, 不能是省;
+        //- 如果搜索区域为 BMap.Map 对象, 路线结果会自动添加到地图上; 如果提供了结果容器, 相应的路线描述也会展示在页面上
+        var transit = new BMap.TransitRoute(map, {
+            //- renderOptions: {map: map}
+            renderOptions: {map: map, panel: "results"}  //- 提供了展示文字结果的容器, 方案会自动显示
+        });
+        transit.search("王府井", "西单");
+        //- 数据接口见 文档...
+block content
+    #container

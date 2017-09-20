@@ -1,0 +1,28 @@
+extends layout
+append styles
+    style.
+        html{height: 100%}
+        body{height: 100%; margin: 0px; padding: 0px}
+        #container{height: 100%}
+append scripts
+    script.
+        var map = new BMap.Map("container");          //- 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);  //- 创建中心点坐标, 北京
+        map.centerAndZoom(point, 15);                 //- 地图初始化, 设置地图级别
+        map.enableScrollWheelZoom(true);              //- 开启鼠标滚轮缩放, 默认是关闭的
+        //- 事件监听
+        map.addEventListener("click", function(){ alert("您点击了地图。"); });
+        map.addEventListener("dragend", function(){
+            var center = map.getCenter();
+            alert("地图中心点变更为:" + center.lng + ", " + center.lat);
+        });  //- 通过方法获得经纬点坐标
+        map.addEventListener("click", function(e){ alert(e.point.lng + ", " + e.point.lat); });  //- 通过事件传递经纬点
+        map.addEventListener("zoomend", function(){ alert("地图缩放至：" + this.getZoom() + "级"); });  //- 得到缩放级别
+        //- 移除事件监听, 第一次点击后移除
+        function showInfo(e){
+            alert(e.point.lng + ", " + e.point.lat);
+            map.removeEventListener("click", showInfo);
+        }
+        map.addEventListener("click", showInfo);
+block content
+    #container

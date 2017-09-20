@@ -1,0 +1,18 @@
+extends layout
+append styles
+    style.
+        html{height: 100%}
+        body{height: 100%; margin: 0px; padding: 0px}
+        #container{height: 100%}
+append scripts
+    script.
+        var map = new BMap.Map("container");          //- 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);  //- 创建中心点坐标, 北京
+        map.centerAndZoom(point, 15);                 //- 地图初始化, 设置地图级别
+        map.enableScrollWheelZoom(true);              //- 开启鼠标滚轮缩放, 默认是关闭的
+        //- 添加移除图层, 还可以自定义图层
+        var traffic = new BMap.TrafficLayer();  //- 创建交通流量图层实例
+        map.addTileLayer(traffic);              //- 将图层添加到地图上
+        //- map.removeTileLayer(traffic);       //- 将图层移除
+block content
+    #container

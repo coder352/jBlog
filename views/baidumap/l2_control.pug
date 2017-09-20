@@ -1,0 +1,20 @@
+extends layout
+append styles
+    style.
+        html{height: 100%}
+        body{height: 100%; margin: 0px; padding: 0px}
+        #container{height: 100%}
+append scripts
+    script.
+        var map = new BMap.Map("container");          //- 创建地图实例
+        var point = new BMap.Point(116.404, 39.915);  //- 创建中心点坐标, 北京
+        map.centerAndZoom(point, 15);                 //- 地图初始化, 设置地图级别
+        map.enableScrollWheelZoom(true);              //- 开启鼠标滚轮缩放, 默认是关闭的
+        //- 控件, 还可以设置控件的位置和偏移, 自定义控件
+        map.addControl(new BMap.NavigationControl());   //- 标准地图控件, 默认左上角, 街市省国, 上下左右
+        map.addControl(new BMap.ScaleControl());        //- 平移缩放控件
+        map.addControl(new BMap.OverviewMapControl());  //- 缩略图控件
+        map.addControl(new BMap.MapTypeControl());      //- 添加地图类型控件, 默认右上角, 地图-卫星-三维
+        map.setCurrentCity("北京");                 //- 仅当设置城市信息时, MapTypeControl 的切换功能才能可用
+block content
+    #container
