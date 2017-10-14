@@ -15,6 +15,11 @@
 users.js 路由只提供 Restful API, 不进行渲染
 找时间把 sass 统一重写一遍
 ```
+### Deal with CDN
+``` zsh
+# 关于 CDN 的使用, 表示自己开发还是将 CDN 的库全部放到本地比较友好...
+jcdn_cache  # 在有 layout.pug 的目录下执行, 会将 layout.pug 中的所有 css, js 放到对应的目录下
+```
 ### Run
 ``` zsh
 # 这是没用 pm2 的情况

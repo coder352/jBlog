@@ -1,0 +1,14 @@
+extends layout
+append styles
+    //- 这里复用一下, 懒得改了
+    link(rel='stylesheet', href='/stylesheets/tools/html-and-pug.css')
+append scripts
+    script(src='/javascripts/tools/notepad.js')
+block content
+    .page-header #[h1 NotePad between Computer and Phone]
+    .container
+        form.notepad(method='post')
+            fieldset #[strong Add:] #[textarea#add(name='add')]
+            fieldset #[strong Display:] #[textarea#display(name='display')]
+            fieldset.actions
+                button.convert(type='Add') Add!

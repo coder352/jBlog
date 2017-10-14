@@ -46,6 +46,7 @@ router.get('/chat-getalluser', function(req, res) {
     res.json(data);
 });
 //================================================================
+// tool 相关路由
 // html2pug
 router.get('/tools/html2pug', function(req, res) { res.render('tools/html2pug', { title: 'HTML2Pug - HTML to Pug Online Realtime Converter' }); });
 html2jade = require('html2jade');  // html2jade 这个项目还没改名字...
@@ -64,6 +65,21 @@ router.post('/tools/pug2html-convert', function (req, res) {
     pug2html.render(pug, {pretty: '    '}, function (error, stdout, stderr) { res.json({ html: stdout}); });
     // https://pugjs.org/api/reference.html 查看 API, 用下面一句话进行测试
     // pug2html.render('html\n    body\n    html\n        h1', {pretty: '    '}, function (error, stdout, stderr) { console.log(stdout); });
+});
+// notepad, 将网站前台框中输入的文本保存到网站根目录文件中
+router.get('/tools/notepad', function(req, res) { res.render('tools/notepad', { title: 'NotePad - Share text between computer and phone' })});
+router.post('/tools/notepad-write', function (req, res) {
+	var text = req.body.text;
+    console.log("hello");
+    console.log(text);
+    var fs = require('fs');
+    fs.appendFile("tmp-notepad", text + '\n', function(err) {
+        if(err) { return console.log(err); }
+        res.json({
+            status: "OK",
+            text_all: text
+        });
+    });
 });
 //================================================================
 // Echarts 相关路由

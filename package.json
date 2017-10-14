@@ -49,6 +49,7 @@
         "supertest": "2.0.1"
     },
     "//": {
+        "node-version": "7.10.0",
         "config-lite": "根据 NODE_ENV 的不同执行不同的配置, 默认 default, eg. NODE_ENV=test npm start",
         "connect-flash": "页面通知提示的中间件, 登录提示, 刷新消失, 基于 session 实现, 结合 express-session 使用",
         "connect-mongo": "将 session 存储于 mongodb, 结合 express-session 使用",
