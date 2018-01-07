@@ -1,0 +1,35 @@
+body{
+    /*background-image: url("../pic/back.jpg");*/
+}
+.logo{
+    background-image: url("/images/search-engine/logo.jpg");
+    width: 400px;
+    height: 130px;
+    margin: 80px auto;
+}
+#frame1{
+    margin: 0 auto;
+    width: 600px;
+    height: 80px;
+}
+#input1{
+    height: 40px;
+    border: #54b5f4 solid 1px;
+}
+#btn{
+    height: 40px;
+    font-size: 20px;
+    font-family:"华文隶书";
+    color: white;
+    background-color: #54b5f4;
+    border: #54b5f4 solid 1px;
+}
+#hid{
+    margin-top: 230px;
+}
+.foot{
+    margin: 0 auto;
+    padding-left: 510px;
+    font-size: 17px;
+    font-family:"华文楷体";
+}

@@ -7,12 +7,15 @@ html
         //- bootstrap
         block styles
             link(rel='stylesheet', href='/cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
-            link(rel='stylesheet', href='/stylesheets/style.css')
+            link(rel='stylesheet', href='/cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/css/bootstrap.min.css')
+            link(rel='stylesheet', href='/stylesheets/search-engine/interface.css')
+
+            //- 下面的是 ./index-caitian.pug 用到了
+            //- link(rel='stylesheet', href='/stylesheets/search-engine/css.css')
+
     body
         block content
         //- jquery bootstrap
         block scripts
             script(src='/cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js')
             script(src='/cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js')
-            //- 不要用 Echarts 2 了, 好难用啊
-            script(src='/cdnjs.cloudflare.com/ajax/libs/echarts/3.6.1/echarts.js')

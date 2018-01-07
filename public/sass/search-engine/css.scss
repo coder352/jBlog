@@ -1,0 +1,51 @@
+#wrap{
+	/*background: yellow;*/
+	margin: 200px auto;
+	width: 530px;
+}
+#wrap #box1{
+	text-align: center;
+	/*background: green;*/
+
+}
+#wrap img{
+	display: inline-block;
+	height: 60px;
+	width: 60px;
+	vertical-align: bottom;
+}
+#wrap .font{
+	display: inline-block;
+	/*background: gray;*/
+	font: 50px '华文新魏';
+	color: #011ab0;
+	margin-left: 10px;
+}
+
+#wrap #box2{
+	height: 42px;
+	/*background: green;*/
+	margin-top: 20px;
+}
+#wrap input[name="q"]{
+	border: 1px solid #011ab0;
+	/*border-right: none;*/
+	padding: 0 5px;
+	height: 40px;
+	width: 447px;
+	vertical-align: top;
+}
+#wrap .img-wrap{
+	display: inline-block;
+	width: 70px;
+	height: 42px;
+	background: #011ab0;
+	margin-left: -4px;
+	text-align: center;
+}
+#wrap #box2 img{
+	margin: 8px 0;
+	width: 25px;
+	height: 25px;
+	vertical-align: middle;
+}

@@ -20,6 +20,7 @@ var session = require('express-session');
 
 var index = require('./routes/index');
 var users = require('./routes/users');  // 加载了 index. js 和 users.js 路由文件
+var search_engine = require('./routes/search-engine');  // 信息检索大作业
 // My code
 var blog = require('./routes/blog/index')
 var blog_posts = require('./routes/blog/posts')
@@ -96,6 +97,7 @@ app.use(function(req, res, next){
 // app.use 使用的就是 Express 的中间件
 app.use('/', index);
 app.use('/users', users);  // 路由控制器
+app.use('/search-engine', search_engine);  // 路由控制器
 // My code
 // routes(app);  // 另一种路由控制器方法, var routes = require('./routes/blog');  // 加载 ./routes/blog/index.js
 app.use('/blog', blog)
